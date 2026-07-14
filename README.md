@@ -1,6 +1,7 @@
 # Hill Apps
 
-A suite of four custom music apps for the RG35XXSP handheld (muOS / PortMaster):
+A suite of four custom music apps for the RG35XXSP handheld (muOS / PortMaster).
+Also supports Knulli (Anbernic RG-Scarab) — see [KNULLI.md](KNULLI.md).
 
 - **HillBeat** — step-sequencer drum machine
 - **HillChord** — chord/note instrument with looper, arpeggiator, and effects
@@ -26,10 +27,14 @@ README documents where it expects samples to be found.
 
 ## Setup
 
-Each app has an `install_deps.sh` that installs its Python dependencies
+Each app has an `install_deps` that installs its Python dependencies
 (`pygame`, `numpy`) into a local `pylibs/` directory using the target device's
 own Python, so the wheels match the device's ABI:
 
 ```
-bash install_deps.sh "$(command -v python3)" ./pylibs
+bash install_deps "$(command -v python3)" ./pylibs
 ```
+
+On-device this happens automatically on first launch (needs wifi once,
+usually under a minute) — a splash screen with a loading indicator is shown
+once pygame itself finishes installing (see [KNULLI.md](KNULLI.md)).
