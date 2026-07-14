@@ -1,7 +1,7 @@
 # Hill Apps
 
-A suite of four custom music apps for the RG35XXSP handheld (muOS / PortMaster).
-Also supports Knulli (Anbernic RG-Scarab) — see [KNULLI.md](KNULLI.md).
+A suite of four custom music apps for the Anbernic RG35XXSP handheld (muOS /
+PortMaster). Also supports Knulli on that same hardware — see [KNULLI.md](KNULLI.md).
 
 - **HillBeat** — step-sequencer drum machine
 - **HillChord** — chord/note instrument with looper, arpeggiator, and effects
@@ -25,7 +25,7 @@ Sample audio is not committed to this repo (see `.gitignore`) — it's distribut
 separately and lives on the device's SD card / shared sample library. Each app's
 README documents where it expects samples to be found.
 
-## Installing on Knulli (Anbernic RG-Scarab)
+## Installing on Knulli (Anbernic RG35XXSP)
 
 1. Copy `<App>.sh` (e.g. `HillBeat.sh`) into `roms/ports/` on the SD card.
 2. Copy the app's own folder (e.g. `hillbeat/`) next to it, at

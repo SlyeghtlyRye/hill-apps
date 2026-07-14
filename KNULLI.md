@@ -1,13 +1,15 @@
-# Running Hill Apps on Knulli (Anbernic RG-Scarab)
+# Running Hill Apps on Knulli (Anbernic RG35XXSP)
 
 Hill Apps was originally built and tested against **muOS on the Anbernic
 RG35XXSP**. This document tracks what changes were needed to also support
-**Knulli** (a Batocera fork) on the **Anbernic RG-Scarab**.
+**Knulli** (a Batocera fork) on that same hardware. "Scarab" is Knulli's
+release codename (like Ubuntu's animal codenames), not a separate device —
+the board is the same RG35XXSP.
 
 ## Confirmed facts (pulled from a real device's own logs, 2026-07-14)
 
-- Board: `rg35xx-sp`, `CFW_NAME=knulli` (lowercase), version string `scarab
-  2026/05/11`.
+- Board: `rg35xx-sp` (Anbernic RG35XXSP), `CFW_NAME=knulli` (lowercase),
+  Knulli release codename `scarab`, version string `scarab 2026/05/11`.
 - PortMaster **is** installed on-device at
   `/userdata/system/.local/share/PortMaster` — found via the existing
   `$XDG_DATA_HOME/PortMaster` check, since `$HOME=/userdata/system` at
@@ -200,7 +202,7 @@ launches normally.
 
 ## Confirmed on real hardware (2026-07-14, live SSH session)
 
-Everything below was verified directly on the Scarab, not inferred:
+Everything below was verified directly on the device, not inferred:
 
 - All four apps (`HillBeat`, `HillChord`, `HillSequencer`, `HillBand`) launch
   successfully from the Ports menu after the CRLF fix, including a genuine
