@@ -235,3 +235,29 @@ Everything below was verified directly on the device, not inferred:
   `kill` the EmulationStation binary PID and let its supervisor wrapper,
   `emulationstation-standalone`, restart it — but don't kill the wrapper
   process itself, or nothing will restart it automatically).
+
+## Known limitations / deliberately not addressed here
+
+- **Input remapping.** Discussed but not implemented — every app hardcodes
+  which raw joystick button index maps to which action, and the live
+  `tools/probe_input.py` test on real hardware confirmed the existing
+  mapping is already correct, so there was no live mismatch to work around.
+  Making it user-configurable would mean a settings UI, persisted custom
+  mappings, and reworking every button check in all four apps' `main.py` to
+  go through it instead of a fixed constant — a substantial feature on its
+  own, not a quick add.
+- **The initial black window before the install splash appears** (while
+  `pygame` itself downloads, typically a few seconds up to ~20s) is
+  inherent — nothing can render before pygame exists to render with. Not
+  further addressed.
+- **`gamelist.xml` cover art / descriptions** for each app in Knulli's Ports
+  list were added directly on the test device during this session, not
+  through this repo — `gamelist.xml` is per-install EmulationStation state
+  (regenerated per SD card, not something to commit here). If you want this
+  automated for future installs, it'd need a small install script that
+  patches `roms/ports/gamelist.xml` with each app's existing `cover.png` and
+  `port.json` description; not implemented.
+- **Pre-existing minor inconsistency, not introduced by this PR:**
+  `hillbeat/install_deps` pins `numpy>=1.21` while the other three pin
+  `numpy>=1.26`. Harmless (both installed fine in testing) but worth
+  aligning at some point.

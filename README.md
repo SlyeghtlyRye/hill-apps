@@ -40,6 +40,12 @@ README documents where it expects samples to be found.
    Knulli's own Python (usually under a minute) — a loading screen with the
    app's cover art shows while that happens, then it starts normally.
 
+**No sound on first launch?** That's expected — a fresh install has no
+sample/instrument assigned to any voice or track yet. Press `START+B`
+(HillBeat/HillSequencer/HillBand) or `START` (HillChord) to open the
+library and assign one. Hold `FUNCTION+SELECT` any time for the full
+controls cheat-sheet.
+
 See [KNULLI.md](KNULLI.md) for full details, troubleshooting, and what
 changed to make this work.
 
